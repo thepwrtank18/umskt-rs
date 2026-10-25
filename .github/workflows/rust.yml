@@ -16,6 +16,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Get keys.json
+      run: |
+        git clone --no-checkout --depth 1 https://github.com/UMSKT/UMSKT
+        cd UMSKT
+        git sparse-checkout set keys.json
+        git checkout
+        mv keys.json ../keys.json
     - name: Build
       run: cargo build --verbose
     - name: Run
