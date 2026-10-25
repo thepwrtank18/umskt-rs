@@ -33,3 +33,7 @@ jobs:
         cargo run -- -v generate -b 5A -c 640
         echo Test 3 - generating confid
         cargo run -- -v confid 253286028742154311079061239762245184619981623171292574
+    - uses: actions/upload-artifact@v7
+      with:
+        path: target/debug/mskey
+        if-no-files-found: error
