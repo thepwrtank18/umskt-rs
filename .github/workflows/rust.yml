@@ -23,8 +23,8 @@ jobs:
     - name: Get keys.json
       shell: bash
       run: |
-        git clone --no-checkout --depth 1 https://github.com/UMSKT/UMSKT
-        cd UMSKT
+        git clone --no-checkout --depth 1 https://github.com/UMSKT/UMSKT UMSKT_clone
+        cd UMSKT_clone
         git sparse-checkout set keys.json
         git checkout
         mv keys.json ../keys.json
