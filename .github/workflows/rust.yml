@@ -26,4 +26,10 @@ jobs:
     - name: Build
       run: cargo build --verbose
     - name: Run
-      run: cargo run
+      run: | 
+        echo Test 1 - generating key `(BINK1998`)
+        cargo run -- -v generate -b 2C -c 365
+        echo Test 2 - generating key `(BINK2002`)
+        cargo run -- -v generate -b 5A -c 640
+        echo Test 3 - generating confid
+        cargo run -- -v confid -i 253286028742154311079061239762245184619981623171292574
